@@ -11,6 +11,7 @@ namespace LoadRelatedDataEFCore.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //These two lines will helps to add auto include the sub dependent lists
             modelBuilder.Entity<Comic>().Navigation(c => c.Teams).AutoInclude();
             modelBuilder.Entity<Team>().Navigation(t => t.SuperHeroes).AutoInclude();
 
